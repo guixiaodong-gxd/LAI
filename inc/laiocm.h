@@ -29,6 +29,16 @@
  */
 
 /**
+ * @brief OCM report spectrum power result
+ *
+ * @param[in] ocm_id OCM Id
+ * @param[in] ocm_result OCM Result
+ */
+typedef void (*lai_ocm_report_result_fn)(
+        _In_ lai_object_id_t ocm_id,
+        _In_ lai_spectrum_power_t ocm_result);
+
+/**
  * @brief OCM attribute IDs
  */
 typedef enum _lai_ocm_attr_t
@@ -55,12 +65,13 @@ typedef enum _lai_ocm_attr_t
     LAI_OCM_ATTR_MONITOR_PORT,
 
     /**
-     * @brief Enabled
+     * @brief Scan
      *
      * @type bool
-     * @flags CREATE_AND_SET
+     * @flags SET_ONLY
+     * @isrecoverable false
      */
-    LAI_OCM_ATTR_ENABLED,
+    LAI_OCM_ATTR_SCAN,
 
     /**
      * @brief Frequency granularity in MHz
@@ -143,12 +154,13 @@ typedef enum _lai_ocm_attr_t
     LAI_OCM_ATTR_SOFTWARE_VERSION,
 
     /**
-     * @brief Spectrum power
+     * @brief Spectrum power notify
      *
-     * @type lai_spectrum_power_list_t
-     * @flags READ_ONLY
+     * @type lai_pointer_t lai_ocm_report_result_fn
+     * @flags CREATE_ONLY
+     * @default NULL
      */
-    LAI_OCM_ATTR_SPECTRUM_POWER,
+    LAI_OCM_ATTR_SPECTRUM_POWER_NOTIFY,
 
     /**
      * @brief End of attributes
