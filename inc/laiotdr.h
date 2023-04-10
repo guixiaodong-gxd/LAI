@@ -217,6 +217,15 @@ typedef enum _lai_otdr_attr_t
     LAI_OTDR_ATTR_ENABLED,
 
     /**
+     * @brief Scan
+     *
+     * @type bool
+     * @flags SET_ONLY
+     * @isrecoverable false
+     */
+    LAI_OTDR_ATTR_SCAN,
+
+    /**
      * @brief Start time
      *
      * @type char
@@ -241,12 +250,12 @@ typedef enum _lai_otdr_attr_t
     LAI_OTDR_ATTR_DYNAMIC_RANGE,
 
     /**
-     * @brief Dynamic accuracy
+     * @brief Distance accuracy
      *
      * @type lai_double_t
      * @flags READ_ONLY
      */
-    LAI_OTDR_ATTR_DYNAMIC_ACCURACY,
+    LAI_OTDR_ATTR_DISTANCE_ACCURACY,
 
     /**
      * @brief Sampling resolution
