@@ -29,16 +29,6 @@
  */
 
 /**
- * @brief OCM report spectrum power result
- *
- * @param[in] ocm_id OCM Id
- * @param[in] ocm_result OCM Result
- */
-typedef void (*lai_ocm_report_result_fn)(
-        _In_ lai_object_id_t ocm_id,
-        _In_ lai_spectrum_power_t ocm_result);
-
-/**
  * @brief OCM attribute IDs
  */
 typedef enum _lai_ocm_attr_t
@@ -152,15 +142,6 @@ typedef enum _lai_ocm_attr_t
      * @flags READ_ONLY
      */
     LAI_OCM_ATTR_SOFTWARE_VERSION,
-
-    /**
-     * @brief Spectrum power notify
-     *
-     * @type lai_pointer_t lai_ocm_report_result_fn
-     * @flags CREATE_ONLY
-     * @default NULL
-     */
-    LAI_OCM_ATTR_SPECTRUM_POWER_NOTIFY,
 
     /**
      * @brief End of attributes

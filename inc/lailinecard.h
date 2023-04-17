@@ -105,6 +105,30 @@ typedef void (*lai_linecard_alarm_notification_fn)(
         _In_ lai_alarm_info_t alarm_info);
 
 /**
+ * @brief Linecard OCM spectrum power notification
+ *
+ * @param[in] linecard_id Linecard Id
+ * @param[in] ocm_id OCM Id
+ * @param[in] ocm_result OCM Result
+ */
+typedef void (*lai_linecard_ocm_spectrum_power_notification_fn)(
+        _In_ lai_object_id_t linecard_id,
+        _In_ lai_object_id_t ocm_id,
+        _In_ lai_spectrum_power_list_t ocm_result);
+
+/**
+ * @brief Linecard OTDR report result
+ *
+ * @param[in] linecard_id Linecard Id
+ * @param[in] otdr_id OTDR Id
+ * @param[in] otdr_result OTDR result
+ */
+typedef void (*lai_linecard_otdr_result_notification_fn)(
+        _In_ lai_object_id_t linecard_id,
+        _In_ lai_object_id_t otdr_id,
+        _In_ lai_otdr_result_t otdr_result);
+
+/**
  * @brief Attribute Id in lai_set_linecard_attribute() and
  *        lai_get_linecard_attribute() calls.
  */
@@ -279,6 +303,24 @@ typedef enum _lai_linecard_attr_t
      * @default NULL
      */
     LAI_LINECARD_ATTR_LINECARD_ALARM_NOTIFY,
+
+    /**
+     * @brief Spectrum power notification
+     *
+     * @type lai_pointer_t lai_linecard_ocm_spectrum_power_notification_fn
+     * @flags CREATE_ONLY
+     * @default NULL
+     */
+    LAI_LINECARD_ATTR_LINECARD_OCM_SPECTRUM_POWER_NOTIFY,
+
+    /**
+     * @brief OTDR result notification
+     *
+     * @type lai_pointer_t lai_linecard_otdr_result_notification_fn
+     * @flags CREATE_ONLY
+     * @default NULL
+     */
+    LAI_LINECARD_ATTR_LINECARD_OTDR_RESULT_NOTIFY,
 
     /**
      * @brief Collect linecard alarm.
