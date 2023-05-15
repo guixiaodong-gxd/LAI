@@ -272,6 +272,14 @@ typedef enum _lai_otdr_attr_t
     LAI_OTDR_ATTR_SOFTWARE_VERSION,
 
     /**
+     * @brief Firmware version
+     *
+     * @type char
+     * @flags READ_ONLY
+     */
+    LAI_OTDR_ATTR_FIRMWARE_VERSION,
+
+    /**
      * @brief End of attributes
      */
     LAI_OTDR_ATTR_END,

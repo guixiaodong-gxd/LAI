@@ -547,7 +547,7 @@ sub ProcessEnumSection
         # remove unnecessary attributes
         my @values = @{ $LAI_ENUMS{$enumtypename}{values} };
 
-        @values = grep(!/^LAI_\w+_(START|END)$/, @values);
+        @values = grep(!/^LAI_\w+_(ATTR|STAT|RANGE)_(START|END)$/, @values);
         @values = grep(!/^LAI_\w+(RANGE_BASE)$/, @values);
 
         if ($enumtypename =~ /^(lai_\w+)_t$/)

@@ -47,14 +47,6 @@ typedef enum _lai_ocm_attr_t
     LAI_OCM_ATTR_ID = LAI_OCM_ATTR_START,
 
     /**
-     * @brief Monitor port
-     *
-     * @type char
-     * @flags CREATE_AND_SET
-     */
-    LAI_OCM_ATTR_MONITOR_PORT,
-
-    /**
      * @brief Scan
      *
      * @type bool
@@ -142,6 +134,22 @@ typedef enum _lai_ocm_attr_t
      * @flags READ_ONLY
      */
     LAI_OCM_ATTR_SOFTWARE_VERSION,
+
+    /**
+     * @brief Firmware version
+     *
+     * @type char
+     * @flags READ_ONLY
+     */
+    LAI_OCM_ATTR_FIRMWARE_VERSION,
+
+    /**
+     * @brief Insertion loss to panel port
+     *
+     * @type lai_double_t
+     * @flags READ_ONLY
+     */
+    LAI_OCM_ATTR_INSERTION_LOSS_TO_PANEL_PORT,
 
     /**
      * @brief End of attributes
