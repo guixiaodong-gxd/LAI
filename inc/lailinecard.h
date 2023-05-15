@@ -763,36 +763,6 @@ typedef lai_status_t (*lai_clear_linecard_stats_fn)(
         _In_ const lai_stat_id_t *counter_ids);
 
 /**
- * @brief Get linecard alarms.
- *
- * @param[in] linecard_id Linecard id
- * @param[in] number_of_alarms Number of alarms in the array
- * @param[in] alarm_ids Specifies the array of alarm ids
- * @param[out] alarm_info Array of resulting alarm info.
- *
- * @return #LAI_STATUS_SUCCESS on success, failure status code on error
- */
-typedef lai_status_t (*lai_get_linecard_alarms_fn)(
-        _In_ lai_object_id_t linecard_id,
-        _In_ uint32_t number_of_alarms,
-        _In_ const lai_alarm_type_t *alarm_ids,
-        _Out_ lai_alarm_info_t *alarm_info);
-
-/**
- * @brief Clear linecard alarms.
- *
- * @param[in] linecard_id Linecard id
- * @param[in] number_of_alarms Number of alarms in the array
- * @param[in] alarm_ids Specifies the array of alarm ids
- *
- * @return #LAI_STATUS_SUCCESS on success, failure status code on error
- */
-typedef lai_status_t (*lai_clear_linecard_alarms_fn)(
-        _In_ lai_object_id_t linecard_id,
-        _In_ uint32_t number_of_alarms,
-        _In_ const lai_alarm_type_t *alarm_ids);
-
-/**
  * @brief Linecard method table retrieved with lai_api_query()
  */
 typedef struct _lai_linecard_api_t
@@ -804,8 +774,6 @@ typedef struct _lai_linecard_api_t
     lai_get_linecard_stats_fn         get_linecard_stats;
     lai_get_linecard_stats_ext_fn     get_linecard_stats_ext;
     lai_clear_linecard_stats_fn       clear_linecard_stats;
-    lai_get_linecard_alarms_fn        get_linecard_alarms;
-    lai_clear_linecard_alarms_fn      clear_linecard_alarms;
 } lai_linecard_api_t;
 
 /**
