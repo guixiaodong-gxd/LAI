@@ -435,11 +435,18 @@ typedef enum _lai_oa_attr_t
     LAI_OA_ATTR_APR_LINE_ENABLE,
 
     /**
+     * @brief Enable APR line lldp validation
+     *
+     * @type bool
+     * @flags CREATE_AND_SET
+     */
+    LAI_OA_ATTR_APR_LINE_LLDP_VALIDATION,
+
+    /**
      * @brief APR line valid lldp
      *
      * @type bool
      * @flags CREATE_AND_SET
-     * @isrecoverable false
      */
     LAI_OA_ATTR_APR_LINE_VALID_LLDP,
 
